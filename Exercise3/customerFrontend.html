@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Exercise 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="formChecker.js"></script>
+</head>
+
+<body>
+    <div id="error"></div>
+    <form id="orderForm" action="customerBackend.php" method="post">
+        <!--  -->
+        <div id="ItemsSection"> 
+            <h2> Select Item to Purchase:</h2>
+
+            <div id="ItemsBox">
+                <div id="Item1" class = "Item">
+                    <label for="prod_1">Strawberries ($5 per lb):</label>
+                    <input type="number" name="prod_1_num" id="prod_1_num" min="0" value="0" required>
+                    <input type="hidden" name="prod_1_price" value="5.00" required>
+                    <input type="hidden" name="prod_1_name" value="Strawberries" required>
+                </div>
+
+                <div id="Item2" class = "Item">
+                    <label for="prod_2">Bannanas ($3 per lb):</label>
+                    <input type="number" name="prod_2_num" id="prod_2_num" min="0" value="0" required>
+                    <input type="hidden" name="prod_2_price" value="3.00" required>
+                    <input type="hidden" name="prod_1_name" value="Bannanas" required>
+                </div>
+
+
+                <div id="Item3" class = "Item">
+                    <label for="prod_3">Blueberrys ($2.5 per lb):</label>
+                    <input type="number" name="prod_3_num" id="prod_3_num" min="0" value="0" required>
+                    <input type="hidden" name="prod_3_price" value="2.50" required>
+                    <input type="hidden" name="prod_1_name" value="Blueberrys" required>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div>
+            <h4>Select Shipping Option:</h4>
+            <div>
+                <input type="radio" id="Shipping1" name="Shipping" value="1" required>
+                <label for="Shipping1">Free 7 day</label>
+            </div>
+            <div>
+                <input type="radio" id="Shipping3" name="Shipping" value="2" required>
+                <label for="Shipping3">$5.00 three day</label>
+            </div>
+            <div>
+                <input type="radio" id="Shipping2" name="Shipping" value="3" required>
+                <label for="Shipping2">$50.00 over night                </label>
+            </div>
+  
+
+            <div id="UserInfo">
+                <h4>User Info:</h4>
+                <div>
+                    <label for="user">Username</label>
+                    <input type="email" id="user" name="user" required>
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="pass" minlength="1" required>
+                </div>
+            </div>
+
+        </div>
+        <input type="reset">
+
+        <input type="submit">
+    </form>
+
+</body>
