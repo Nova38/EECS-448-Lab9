@@ -1,8 +1,16 @@
 body{
-    background-color: aquamarine;
+    background-color: lightgray;
 }
 
 
 table, th, td {
     border: 1px solid black;
+}
+
+.t1{
+    background-color: aquamarine;
+}
+
+.t2{
+    background-color:deepskyblue;
 }

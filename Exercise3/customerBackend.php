@@ -8,17 +8,20 @@ $products = [
     [
         'name' => $_POST['prod_1_name'],
         'num' => $_POST['prod_1_num'],
-        'price' => $_POST['prod_1_price']
+        'price' => $_POST['prod_1_price'],
+        'total' => 0
     ],
     [
         'name' => $_POST['prod_2_name'],
         'num' => $_POST['prod_2_num'],
-        'price' => $_POST['prod_2_price']
+        'price' => $_POST['prod_2_price'],
+        'total' => 0
     ],
     [
         'name' => $_POST['prod_3_name'],
         'num' => $_POST['prod_3_num'],
-        'price' => $_POST['prod_3_price']
+        'price' => $_POST['prod_3_price'],
+        'total' => 0
     ],
 ];
 
@@ -50,14 +53,49 @@ switch ($_POST['Shipping']) {
         break;
 }
 
-echo "<table>\n<tr>";
+// Make the header row
+echo "<table>";
+echo"<tr>";
 echo "<th> </th>";
-echo "<th>Quantity</th>";
-echo "<th>Cost per Item</th>";
-echo "<th>Sub Total</th>";
+echo "<th class='t1'>Quantity</th>";
+echo "<th class='t1'>Cost per Item</th>";
+echo "<th class='t1'>Sub Total</th>";
+echo "</tr>";
+
+
+$total = 0;
+
+// Make the item rows
+foreach ($products as $prod) {
+    $prod['total'] = $prod['num'] * $prod['price'];
+
+    echo"<tr>";
+
+    echo "<th class='t1'>" . $prod['name']  . "</th>";
+    echo "<th class='t2'>" . $prod['num']   . "</th>";
+    echo "<th class='t2'>" . $prod['price'] . "</th>";
+    echo "<th class='t2'>" . $prod['total'] . "</th>";
+
+    echo "</tr>";
+
+    $total = $total + $prod['total'];
+
+}
+// unset the value to prevent an error
+unset($value);
+
+
+// Total Row
+echo "<tr>";
+echo "<th colspan= 3 class='t1'> To Cost</th>";
+echo "<th class='t1'>" . $total  . "</th>";
 
 
 
+echo "</tr>";
+
+
+echo "</table>";
 
 // foreach ($_POST as $value) {
 //     echo$value;
